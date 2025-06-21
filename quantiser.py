@@ -63,8 +63,8 @@ def fuse_model_shufflenet(network):
             b2 = m.branch2
             b2[2] = nn.ReLU(inplace=False)
             b2[7] = nn.ReLU(inplace=False)
-            b2[2].eval();
-            b2[7].eval();
+            b2[2].eval()
+            b2[7].eval()
             torch.quantization.fuse_modules(b2, ['0', '1', '2'], inplace=True)
             torch.quantization.fuse_modules(b2, ['3', '4'], inplace=True)
             torch.quantization.fuse_modules(b2, ['5', '6', '7'], inplace=True)
