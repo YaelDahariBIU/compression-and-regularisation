@@ -71,10 +71,11 @@ def fuse_model_shufflenet(network):
         if hasattr(m, 'branch1'):
             b1 = m.branch1
             if isinstance(b1, torch.nn.Sequential):
-                torch.quantization.fuse_modules(b1, ['0', '1'], inplace=True)
-                b1[4] = nn.ReLU(inplace=False);
-                b1[4].eval()
-                torch.quantization.fuse_modules(b1, ['2', '3', '4'], inplace=True)
+                if (len(b1) >= 5):
+                    torch.quantization.fuse_modules(b1, ['0', '1'], inplace=True)
+                    b1[4] = nn.ReLU(inplace=False)
+                    b1[4].eval()
+                    torch.quantization.fuse_modules(b1, ['2', '3', '4'], inplace=True)
 
 
 def fuse_model_mobilenet(network):
@@ -110,7 +111,7 @@ def fuse_model_alexnet(network):
 
 
 
-class MobilenetInvertedResidual(models.mobilenet.InvertedResidual):
+class MobilenetInvertedResidual(models.mobilenetv2.InvertedResidual):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.skip_add = nn.quantized.FloatFunctional()  # required for quantization
