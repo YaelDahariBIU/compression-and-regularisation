@@ -106,6 +106,6 @@ This repo is a reproduction of the methods proposed in
 Original code (broken): [kpaupamah/compression-and-regularisation](https://github.com/kpaupamah/compression-and-regularisation)
 
 ## ✍️ Authors
-Yael & Yuval Dahari.   
+Yael & Yuval Dahari.  
 BIU Department of Computer Science.
 
