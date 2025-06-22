@@ -21,7 +21,7 @@ This project explores how **pruning** and **quantisation** can be combined to co
 
 We reproduce and analyse the findings of the original paper using **PyTorch 1.8+**, correcting bugs, updating APIs, and conducting additional experiments on modern CPUs/GPUs.
 
-Read our full report [here](./Quantisation_and_Pruning_for_Neural_Network_Compression_and_Regularisation.pdf).
+Read our full report [here](./Quantisation%20and%20Pruning%20for%20Neural%20Network%20Compression%20and%20Regularisation%20-%20Paper%20Reproduction.pdf).
 
 ---
 
@@ -90,7 +90,7 @@ python run.py --prune 1 --load AlexNet_overfitted.pth
 ```
 
 ## 📊 Results Overview
-| Architecture | Dataset      | Accuracy Δ | Parameters ↓ | Size ↓        | Inference ↓  |
+| Architecture | Dataset      | Accuracy ↑ | Parameters ↓ | Size ↓        | Inference ↓  |
 | ------------ | ------------ | ---------- | ------------ | ------------- | ------------ |
 | AlexNet      | FashionMNIST | +1.13%     | 57M → 5M     | 217MB → 55MB  | 11ms → 5ms   |
 | MobileNetV2  | CIFAR-10     | ≈0%        | 2.2M → 671K  | 8.7MB → 2.5MB | 35ms → 4.5ms |
@@ -106,6 +106,6 @@ This repo is a reproduction of the methods proposed in
 Original code (broken): [kpaupamah/compression-and-regularisation](https://github.com/kpaupamah/compression-and-regularisation)
 
 ## ✍️ Authors
-Yael & Yuval Dahari
+Yael & Yuval Dahari.  
 BIU Department of Computer Science.
 
